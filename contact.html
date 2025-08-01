@@ -21,9 +21,33 @@
   </nav>
 </header>
 
-  <main>
-    <p><strong>Email:</strong> <a href="mailto:info@telcowisesolution.com">info@telcowisesolution.com</a></p>
-    <p><strong>Location:</strong> Plano, Texas</p>
-  </main>
+ <main>
+  <h2>Contact Us</h2>
+  <p><strong>Email:</strong> <a href="mailto:info@telcowisesolution.com">info@telcowisesolution.com</a></p>
+  <p><strong>Location:</strong> Plano, Texas</p>
+
+  <form action="https://formspree.io/f/mwkgyplj" method="POST">
+    <label>
+      Your Name:<br>
+      <input type="text" name="name" required>
+    </label>
+    <br>
+    <label>
+      Your Email:<br>
+      <input type="email" name="email" required>
+    </label>
+    <br>
+    <label>
+      Message:<br>
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+    <br>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p style="font-size: 0.9em; color: gray; margin-top: 10px;">
+    This form is powered by Formspree. You’ll receive messages to your email.
+  </p>
+</main>
 </body>
 </html>
