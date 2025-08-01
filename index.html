@@ -2,44 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Telcowise Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home – Telcowise Solutions</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .home-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .home-section:nth-child(1) { animation-delay: 0.2s; }
+    .home-section:nth-child(2) { animation-delay: 0.4s; }
+    .home-section:nth-child(3) { animation-delay: 0.6s; }
+    .home-section:nth-child(4) { animation-delay: 0.8s; }
+    .home-section:nth-child(5) { animation-delay: 1s; }
+
+    h2 {
+      color: #0066cc;
+    }
+  </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="logo.png" alt="Telcowise Logo" style="height: 150px;">
-    <h1 style="margin: 0;">Telcowise Solutions</h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <div>
+      <img src="logo.png" alt="Telcowise Logo" style="height: 120px;" />
+      <h1>Telcowise Solutions</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <p>We provide professional telecom drafting services.</p>
-<section>
-  <h2>Our Work</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-    <div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <h3>Wireless Site Construction Drawings</h3>
-      <p>Construction drawings for macro & small cell sites: layout, grounding, framing, and power routing.</p>
+    <div class="home-container">
+      <section class="home-section">
+        <h2>Welcome to Telcowise Solutions</h2>
+        <p>
+          Telcowise Solutions is a Texas-based telecom drafting firm that supports engineering and construction workflows nationwide. We help streamline projects for A&E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation. Our mission is to remove bottlenecks in production, improve clarity in design, and make your job easier.
+        </p>
+      </section>
+
+      <section class="home-section">
+        <h2>What We Do</h2>
+        <p>
+          We produce highly detailed drawings for wireless infrastructure, fiber overlays, zoning submittals, permitting, traffic control plans, and more. Every drawing is checked for compliance and accuracy, ensuring that your projects move smoothly from conception to approval. We also accommodate specific templates, CAD standards, and file delivery methods—tailored to your organization’s needs.
+        </p>
+      </section>
+
+      <section class="home-section">
+        <h2>Who We Serve</h2>
+        <p>
+          Our clients include wireless telecom carriers, A&E design firms, permitting specialists, fiber providers, and construction contractors. Whether it’s a large-scale deployment in a metropolitan area or a rural modification, we adjust our workflow and provide timely, consistent drafting support that integrates seamlessly into your pipeline.
+        </p>
+      </section>
+
+      <section class="home-section">
+        <h2>How We Work</h2>
+        <p>
+          We work remotely with clients across the U.S., providing a flexible and scalable drafting team. Our work ethic is built on responsiveness, attention to detail, and reliability. We maintain organized project folders, adapt to your standards, and deliver on time—even with tight schedules. Communication is always clear and prompt.
+        </p>
+      </section>
+
+      <section class="home-section">
+        <h2>Why Telcowise?</h2>
+        <p>
+          Because we understand what you need. From redlines and design updates to full construction sets and permitting packages, we cover it all. We’ve worked in a wide range of jurisdictions, from strict Caltrans TCP requirements in California to more flexible zoning in the Midwest. Telcowise is your drafting partner, whether for ongoing programs or urgent one-off jobs.
+        </p>
+      </section>
     </div>
-    <div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <h3>Zoning & Permit Drawings</h3>
-      <p>Jurisdiction-compliant zoning and permit drawing sets tailored to each municipality’s requirements.</p>
-    </div>
-    <div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <h3>Traffic Control Plans (TCP)</h3>
-      <p>State and city-specific TCPs for construction, fiber placement, and temporary access closures.</p>
-    </div>
-  </div>
-</section>
   </main>
 </body>
 </html>

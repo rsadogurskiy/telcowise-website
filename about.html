@@ -2,27 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About - Telcowise Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Telcowise Solutions</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-section {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-section h3 {
+      color: #0066cc;
+      margin-top: 0;
+    }
+
+    .about-section p {
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="logo.png" alt="Telcowise Logo" style="height: 150px;">
-    <h1 style="margin: 0;">Telcowise Solutions</h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <div>
+      <img src="logo.png" alt="Telcowise Logo" style="height: 120px;" />
+      <h1>Telcowise Solutions</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <p>We are a Texas-based drafting company specializing in telecom and infrastructure design support. We help A&E firms, contractors, and project managers with CAD production for wireless, fiber, zoning, permits, and more.</p>
+    <div class="about-container">
+
+      <div class="about-section">
+        <h3>✨ Our Mission</h3>
+        <p>
+          Telcowise Solutions is committed to providing top-tier drafting and design services that support the fast-paced and evolving telecom and construction industries. We aim to remove bottlenecks, simplify workflows, and deliver drawings that are accurate, professional, and compliant.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h3>🔹 Who We Serve</h3>
+        <p>
+          Our clients include A&E firms, contractors, and project managers across the U.S. We support projects of every size—from small modifications to full site builds—serving those who need reliable, on-time CAD support for telecom, zoning, permitting, and general construction documentation.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h3>📅 Years of Experience</h3>
+        <p>
+          With extensive experience in the telecom sector, our team has delivered thousands of drawings across different state and municipal requirements. We are familiar with city-specific standards, carrier preferences, and evolving permitting regulations.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h3>🌎 Nationwide Reach</h3>
+        <p>
+          Based in Plano, Texas, we serve clients from coast to coast. Our flexible operations and digital workflow allow us to collaborate seamlessly with teams in California, Arizona, New Mexico, Colorado, Florida, and beyond.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h3>⚙️ What We Deliver</h3>
+        <p>
+          Our deliverables include construction drawings, redlines, zoning exhibits, permit plans, traffic control plans (TCP), site audits, and utility markups. Each drawing is tailored to the exact needs of the jurisdiction and your internal documentation format.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h3>💡 Why Telcowise?</h3>
+        <p>
+          We combine technical expertise with excellent communication and customer service. Our clients choose us for our responsiveness, our understanding of industry processes, and our dedication to meeting deadlines without sacrificing quality.
+        </p>
+      </div>
+
+    </div>
   </main>
 </body>
 </html>

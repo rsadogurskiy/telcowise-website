@@ -2,36 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services - Telcowise Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services – Telcowise Solutions</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .services-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      gap: 30px;
+    }
+
+    .service-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-box h3 {
+      margin-top: 0;
+      color: #0066cc;
+    }
+
+    .service-description {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .service-box:hover .service-description {
+      max-height: 500px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div style="display: flex; align-items: center; gap: 15px; padding: 10px;">
-      <img src="logo.png" alt="Telcowise Logo" style="height: 150px;">
-      <h1 style="margin: 0;">Telcowise Solutions</h1>
+    <div>
+      <img src="logo.png" alt="Telcowise Logo" style="height: 120px;" />
+      <h1>Telcowise Solutions</h1>
     </div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contacts.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main style="padding: 20px;">
-    <h2>Our Services</h2>
-    <ul>
-      <li><strong>Wireless Construction Drawings</strong> for A&E firms</li>
-      <li><strong>Zoning Drawings</strong> formatted per jurisdictional requirements</li>
-      <li><strong>Permit Drawings</strong> for wireless and fiber deployments</li>
-      <li><strong>Traffic Control Plans (TCP)</strong> for ROW work</li>
-      <li><strong>Fiber Permit Drawings</strong> for wired telecom</li>
-      <li><strong>Drafting for Oil & Wastewater</strong> telecom systems</li>
-      <li><strong>General Construction Drafting</strong> (floor plans, foundations)</li>
-    </ul>
+  <main>
+    <div class="services-container">
+
+      <div class="service-box">
+        <h3>Wireless Construction Drawings</h3>
+        <div class="service-description">
+          <p>
+            We provide detailed construction drawing packages for wireless telecom site builds and modifications. These include site plans, antenna layouts, electrical details, and structural overviews tailored to your A&E standards. Our services ensure compliance with local jurisdictions and carrier-specific redlines.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <h3>Zoning Drawings</h3>
+        <div class="service-description">
+          <p>
+            Our zoning drawings are formatted per jurisdictional requirements and include vicinity maps, elevation views, and photo simulations. These drawings help streamline planning commission approvals and public hearings.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <h3>Permit Drawings</h3>
+        <div class="service-description">
+          <p>
+            Whether it's a building permit, encroachment permit, or wireless equipment upgrade, we prepare plans that meet the documentation standards of cities and utility authorities. We help reduce delays during the permitting process.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <h3>Traffic Control Plans (TCP)</h3>
+        <div class="service-description">
+          <p>
+            We create TCPs for ROW utility work in accordance with MUTCD and local DOT standards. This includes lane closures, detours, pedestrian routing, and flagger setups designed to minimize disruption while ensuring public safety.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <h3>Fiber Permit Drawings</h3>
+        <div class="service-description">
+          <p>
+            Our team produces fiber layouts and route maps with trench details, splice vaults, conduit specs, and pullbox locations. We understand utility conflict avoidance and strive for optimal routing based on aerial or underground placement.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <h3>Drafting for Oil & Wastewater</h3>
+        <div class="service-description">
+          <p>
+            For industrial infrastructure, we deliver utility tie-in schematics, trenching paths, and fiber/power connections to SCADA or remote units. Our plans are clear and fully annotated for review by both engineering and field teams.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <h3>General Construction Drafting</h3>
+        <div class="service-description">
+          <p>
+            We support architectural and civil engineers with base plan drafting, floor plans, foundation layouts, and title blocks. Whether for permitting, presentation, or redlines, we ensure precision and fast turnaround.
+          </p>
+        </div>
+      </div>
+
+    </div>
   </main>
 </body>
 </html>
