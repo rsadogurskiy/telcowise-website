@@ -6,10 +6,51 @@
   <title>Home – Telcowise Solutions</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 10px 0 0 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+    }
+
     .home-container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 40px 20px;
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -33,12 +74,44 @@
     h2 {
       color: #0066cc;
     }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 10px;
+      }
+
+      header div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 1.2em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .home-container {
+        padding: 20px 15px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div>
-      <img src="logo.png" alt="Telcowise Logo" style="height: 120px;" />
+      <img src="logo.png" alt="Telcowise Logo" style="height: 100px;" />
       <h1>Telcowise Solutions</h1>
     </div>
     <nav>
@@ -46,7 +119,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -56,38 +129,39 @@
       <section class="home-section">
         <h2>Welcome to Telcowise Solutions</h2>
         <p>
-          Telcowise Solutions is a Texas-based telecom drafting firm that supports engineering and construction workflows nationwide. We help streamline projects for A&E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation. Our mission is to remove bottlenecks in production, improve clarity in design, and make your job easier.
+          Telcowise Solutions is a Texas-based telecom drafting firm that supports engineering and construction workflows nationwide. We help streamline projects for A&E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation.
         </p>
       </section>
 
       <section class="home-section">
         <h2>What We Do</h2>
         <p>
-          We produce highly detailed drawings for wireless infrastructure, fiber overlays, zoning submittals, permitting, traffic control plans, and more. Every drawing is checked for compliance and accuracy, ensuring that your projects move smoothly from conception to approval. We also accommodate specific templates, CAD standards, and file delivery methods—tailored to your organization’s needs.
+          Our core services include wireless site construction drawings, zoning packages formatted per jurisdiction, permit drawings, traffic control plans (TCP), fiber overlays, and more. We also support general drafting needs for structural, civil, and MEP engineers. Every drawing is created with precision and reviewed for code and compliance accuracy.
         </p>
       </section>
 
       <section class="home-section">
         <h2>Who We Serve</h2>
         <p>
-          Our clients include wireless telecom carriers, A&E design firms, permitting specialists, fiber providers, and construction contractors. Whether it’s a large-scale deployment in a metropolitan area or a rural modification, we adjust our workflow and provide timely, consistent drafting support that integrates seamlessly into your pipeline.
+          We work with telecom carriers, engineering design firms, permitting coordinators, and general contractors. Whether you’re launching a new build in a dense urban zone or just need quick redlines turned around, we adapt to your workflow and scale as needed.
         </p>
       </section>
 
       <section class="home-section">
         <h2>How We Work</h2>
         <p>
-          We work remotely with clients across the U.S., providing a flexible and scalable drafting team. Our work ethic is built on responsiveness, attention to detail, and reliability. We maintain organized project folders, adapt to your standards, and deliver on time—even with tight schedules. Communication is always clear and prompt.
+          Our team operates remotely with flexible capacity. You can expect responsive communication, clean file organization, and drawings delivered in your templates or ours. We’re used to tight timelines and high-volume programs—we'll meet your standards and your deadlines.
         </p>
       </section>
 
       <section class="home-section">
         <h2>Why Telcowise?</h2>
         <p>
-          Because we understand what you need. From redlines and design updates to full construction sets and permitting packages, we cover it all. We’ve worked in a wide range of jurisdictions, from strict Caltrans TCP requirements in California to more flexible zoning in the Midwest. Telcowise is your drafting partner, whether for ongoing programs or urgent one-off jobs.
+          Clients trust us because we listen, we communicate clearly, and we deliver. Our experience spans multiple states, agencies, and telecom providers. From California Caltrans TCPs to Midwest zoning drawings—we’ve got you covered.
         </p>
       </section>
     </div>
   </main>
 </body>
 </html>
+
