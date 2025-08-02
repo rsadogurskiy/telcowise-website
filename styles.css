@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("tower-background.jpg"); /* Замените на фактическое имя файла */
+  background-image: url("tower-background.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background-color: rgba(255, 255, 255, 0.9); /* полупрозрачный белый */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -26,7 +26,7 @@ header div {
 }
 
 header img {
-  height: 120px; /* увеличенный логотип */
+  height: 120px;
 }
 
 header h1 {
@@ -58,9 +58,9 @@ main {
   padding: 30px;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.85); /* для читаемости текста поверх фона */
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
@@ -112,13 +112,15 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
 .about-section {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 25px;
   border-radius: 10px;
   margin-bottom: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .about-section:hover {
@@ -126,4 +128,52 @@ section {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.95);
 }
+
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.service-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #003366;
+}
+
+.service-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding-top 0.3s;
+}
+
+.service-card:hover .service-description {
+  max-height: 500px;
+  padding-top: 10px;
+}
+
+@media (max-width: 600px) {
+  header div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .service-title {
+    font-size: 1em;
+  }
 }

@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home – Telcowise Solutions</title>
+  <title>Services – Telcowise Solutions</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
 
     header {
@@ -47,63 +49,44 @@
       font-weight: bold;
     }
 
-    .home-container {
-      max-width: 1100px;
+    main {
+      max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      padding: 20px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .home-section {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease-out forwards;
+    .service-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #003366;
     }
 
-    .home-section:nth-child(1) { animation-delay: 0.2s; }
-    .home-section:nth-child(2) { animation-delay: 0.4s; }
-    .home-section:nth-child(3) { animation-delay: 0.6s; }
-    .home-section:nth-child(4) { animation-delay: 0.8s; }
-    .home-section:nth-child(5) { animation-delay: 1s; }
-
-    h2 {
-      color: #0066cc;
+    .service-description {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding-top 0.3s;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .service-card:hover .service-description {
+      max-height: 500px;
+      padding-top: 10px;
     }
 
     @media (max-width: 600px) {
-      header {
-        padding: 10px;
-      }
-
       header div {
         flex-direction: column;
         align-items: center;
         text-align: center;
-      }
-
-      header h1 {
-        font-size: 1.2em;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .home-container {
-        padding: 20px 15px;
       }
     }
   </style>
@@ -125,41 +108,46 @@
   </header>
 
   <main>
-    <div class="home-container">
-      <section class="home-section">
-        <h2>Welcome to Telcowise Solutions</h2>
-        <p>
-          Telcowise Solutions is a Texas-based telecom drafting firm that supports engineering and construction workflows nationwide. We help streamline projects for A&E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation.
-        </p>
-      </section>
+    <div class="service-card">
+      <div class="service-title">Wireless Construction Drawings</div>
+      <div class="service-description">
+        Full site construction drawings for macro and small cell deployments, including equipment layouts, grounding, power, and antenna configuration. Tailored to each carrier's standards.
+      </div>
+    </div>
 
-      <section class="home-section">
-        <h2>What We Do</h2>
-        <p>
-          Our core services include wireless site construction drawings, zoning packages formatted per jurisdiction, permit drawings, traffic control plans (TCP), fiber overlays, and more. We also support general drafting needs for structural, civil, and MEP engineers. Every drawing is created with precision and reviewed for code and compliance accuracy.
-        </p>
-      </section>
+    <div class="service-card">
+      <div class="service-title">Traffic Control Plans (TCP)</div>
+      <div class="service-description">
+        MUTCD-compliant traffic control plans for fiber, telecom, and utility work zones. Customized for local agency requirements and construction phasing.
+      </div>
+    </div>
 
-      <section class="home-section">
-        <h2>Who We Serve</h2>
-        <p>
-          We work with telecom carriers, engineering design firms, permitting coordinators, and general contractors. Whether you’re launching a new build in a dense urban zone or just need quick redlines turned around, we adapt to your workflow and scale as needed.
-        </p>
-      </section>
+    <div class="service-card">
+      <div class="service-title">Zoning & Permit Drawings</div>
+      <div class="service-description">
+        Detailed zoning drawings for jurisdictions across the U.S. Includes site plans, photo sims, elevation views, and code-compliant formatting.
+      </div>
+    </div>
 
-      <section class="home-section">
-        <h2>How We Work</h2>
-        <p>
-          Our team operates remotely with flexible capacity. You can expect responsive communication, clean file organization, and drawings delivered in your templates or ours. We’re used to tight timelines and high-volume programs—we'll meet your standards and your deadlines.
-        </p>
-      </section>
+    <div class="service-card">
+      <div class="service-title">Fiber Overlay & Redlines</div>
+      <div class="service-description">
+        Scalable drafting support for fiber overlay designs, record updates, and redline markups. Delivered in client-specific CAD or GIS formats.
+      </div>
+    </div>
 
-      <section class="home-section">
-        <h2>Why Telcowise?</h2>
-        <p>
-          Clients trust us because we listen, we communicate clearly, and we deliver. Our experience spans multiple states, agencies, and telecom providers. From California Caltrans TCPs to Midwest zoning drawings—we’ve got you covered.
-        </p>
-      </section>
+    <div class="service-card">
+      <div class="service-title">General Drafting (Structural / Civil / MEP)</div>
+      <div class="service-description">
+        Drafting support for general construction documentation. Includes structural framing, foundation plans, mechanical layout diagrams, and more.
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-title">Telecom Scope in Utility Projects</div>
+      <div class="service-description">
+        We assist with telecom elements inside non-telecom projects, such as oil field SCADA connectivity, lift station communication, and water utility data transfer lines.
+      </div>
     </div>
   </main>
 </body>
