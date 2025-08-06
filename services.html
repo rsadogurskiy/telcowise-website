@@ -14,6 +14,7 @@
       padding: 0;
       font-family: Arial, sans-serif;
     }
+
     header {
       background-color: #fff;
       padding: 10px 20px;
@@ -23,14 +24,17 @@
       flex-wrap: wrap;
       border-bottom: 1px solid #ccc;
     }
+
     header img {
       height: 60px;
     }
+
     header h1 {
       margin: 0;
       font-size: 1.5em;
       color: #003366;
     }
+
     nav ul {
       list-style-type: none;
       margin: 0;
@@ -39,6 +43,7 @@
       flex-wrap: wrap;
       gap: 15px;
     }
+
     nav ul li a {
       text-decoration: none;
       color: #003366;
@@ -63,22 +68,52 @@
 
     .service-box {
       position: relative;
-      overflow: hidden;
       height: 300px;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
       cursor: pointer;
       background-color: #fff;
     }
 
-    .service-box img {
-      width: 100%;
+    .service-image,
+    .service-description {
+      position: absolute;
+      top: 0;
+      left: 0;
       height: 100%;
-      object-fit: cover;
+      width: 100%;
       transition: transform 0.5s ease;
     }
 
-    .service-box h3 {
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service-description {
+      background-color: rgba(0, 102, 204, 0.95);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      transform: translateX(100%);
+    }
+
+    .service-box:hover .service-image {
+      transform: translateX(-100%);
+    }
+
+    .service-box:hover .service-description {
+      transform: translateX(0);
+    }
+
+    .service-title {
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -91,41 +126,10 @@
       z-index: 2;
     }
 
-    .service-description {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 102, 204, 0.9); /* blue background */
-      color: white;
-      padding: 30px 20px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      line-height: 1.4em;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: 3;
-      overflow-wrap: break-word;
-    }
-
-    .service-box:hover img {
-      transform: translateX(-100%);
-    }
-
-    .service-box:hover .service-description {
-      opacity: 1;
-    }
-
     @media (max-width: 600px) {
       .service-description {
         font-size: 1em;
-        padding: 20px 15px;
+        padding: 15px;
       }
     }
   </style>
@@ -149,51 +153,63 @@
   <main>
     <div class="services-grid">
       <div class="service-box">
-        <img src="Wireless construction.png" alt="Wireless">
-        <h3>Wireless Construction Drawings</h3>
+        <div class="service-image">
+          <img src="Wireless construction.png" alt="Wireless">
+        </div>
         <div class="service-description">
           Full site construction drawings for macro and small cell deployments, including layouts, grounding, power, and antenna config per carrier standards.
         </div>
+        <div class="service-title">Wireless Construction Drawings</div>
       </div>
 
       <div class="service-box">
-        <img src="TCP.png" alt="TCP">
-        <h3>Traffic Control Plans (TCP)</h3>
+        <div class="service-image">
+          <img src="TCP.png" alt="TCP">
+        </div>
         <div class="service-description">
           MUTCD-compliant TCPs for fiber, telecom, and utility projects, adapted for local agencies and phasing requirements.
         </div>
+        <div class="service-title">Traffic Control Plans (TCP)</div>
       </div>
 
       <div class="service-box">
-        <img src="zoning.png" alt="Zoning">
-        <h3>Zoning & Permit Drawings</h3>
+        <div class="service-image">
+          <img src="zoning.png" alt="Zoning">
+        </div>
         <div class="service-description">
           Zoning drawings with site plans, elevations, and jurisdiction-specific formatting for telecom deployment.
         </div>
+        <div class="service-title">Zoning & Permit Drawings</div>
       </div>
 
       <div class="service-box">
-        <img src="Fiber.png" alt="Fiber">
-        <h3>Fiber Overlay & Redlines</h3>
+        <div class="service-image">
+          <img src="Fiber.png" alt="Fiber">
+        </div>
         <div class="service-description">
           Drafting support for fiber overlays, redlines, and CAD/GIS conversion based on client markups.
         </div>
+        <div class="service-title">Fiber Overlay & Redlines</div>
       </div>
 
       <div class="service-box">
-        <img src="General Drafting.png" alt="General Drafting">
-        <h3>General Drafting (Structural / Civil / MEP)</h3>
+        <div class="service-image">
+          <img src="General Drafting.png" alt="General Drafting">
+        </div>
         <div class="service-description">
           Structural framing, foundation plans, mechanical layout diagrams, and general drafting for engineers.
         </div>
+        <div class="service-title">General Drafting (Structural / Civil / MEP)</div>
       </div>
 
       <div class="service-box">
-        <img src="Utility projects.png" alt="Utility">
-        <h3>Telecom Scope in Utility Projects</h3>
+        <div class="service-image">
+          <img src="Utility projects.png" alt="Utility">
+        </div>
         <div class="service-description">
           Support for telecom elements in utility projects: oil SCADA, lift stations, water telemetry and more.
         </div>
+        <div class="service-title">Telecom Scope in Utility Projects</div>
       </div>
     </div>
   </main>
