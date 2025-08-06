@@ -78,32 +78,6 @@
       transition: transform 0.5s ease;
     }
 
-    .service-description {
-      position: absolute;
-      top: 0;
-      left: 100%;
-      width: 100%;
-      height: 100%;
-      background-color: #f9f9f9;
-      color: #333;
-      padding: 20px;
-      box-sizing: border-box;
-      transition: transform 0.5s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 1em;
-    }
-
-    .service-box:hover img {
-      transform: translateX(-100%);
-    }
-
-    .service-box:hover .service-description {
-      transform: translateX(-100%);
-    }
-
     .service-box h3 {
       position: absolute;
       bottom: 0;
@@ -114,6 +88,35 @@
       padding: 10px;
       font-size: 1.1em;
       text-align: center;
+      z-index: 2;
+    }
+
+    .service-description {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 102, 204, 0.9); /* blue background */
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+    }
+
+    .service-box:hover img {
+      transform: translateX(-100%);
+    }
+
+    .service-box:hover .service-description {
+      opacity: 1;
+      z-index: 3;
     }
   </style>
 </head>
