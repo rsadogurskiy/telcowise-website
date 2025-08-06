@@ -6,120 +6,70 @@
   <title>About – Telcowise Solutions</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
     }
-
     header {
       background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       padding: 10px 20px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-    }
-
-    header div {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    header h1 {
-      font-size: 1.5em;
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      padding: 0;
-      margin: 10px 0 0 0;
+      justify-content: space-between;
       flex-wrap: wrap;
-      justify-content: center;
+      border-bottom: 1px solid #ccc;
     }
-
+    header img {
+      height: 60px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #003366;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
     nav ul li a {
       text-decoration: none;
-      color: #0066cc;
+      color: #003366;
       font-weight: bold;
     }
-
-    .home-container {
-      max-width: 1100px;
+    main {
+      padding: 30px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
-
-    .home-section {
+    section {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.2s;
     }
-
-    .home-section:nth-child(1) { animation-delay: 0.2s; }
-    .home-section:nth-child(2) { animation-delay: 0.4s; }
-    .home-section:nth-child(3) { animation-delay: 0.6s; }
-    .home-section:nth-child(4) { animation-delay: 0.8s; }
-    .home-section:nth-child(5) { animation-delay: 1s; }
-
-    h2 {
-      color: #0066cc;
-    }
-
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 10px;
-      }
-
-      header div {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 1.2em;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .home-container {
-        padding: 20px 15px;
-      }
-
-      .home-section h2 {
-        font-size: 1.1em;
-      }
-
-      .home-section p {
-        font-size: 0.95em;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <div>
-      <img src="logo.png" alt="Telcowise Logo" style="height: 100px;" />
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <img src="logo.png" alt="Telcowise Logo">
       <h1>Telcowise Solutions</h1>
     </div>
     <nav>
@@ -127,41 +77,31 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contacts.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="home-container">
-      <section class="home-section">
-        <h2>About Telcowise Solutions</h2>
-        <p>
-          Telcowise Solutions is a professional telecom drafting company based in Texas. We deliver construction-ready drawings to support engineering, permitting, and project execution across the telecom industry. Our mission is to provide accurate, timely, and scalable drafting services for growing telecom infrastructure nationwide.
-        </p>
-      </section>
-
-      <section class="home-section">
-        <h2>Our Mission</h2>
-        <p>
-          We are committed to helping engineering teams, A&E firms, contractors, and program managers eliminate bottlenecks in documentation workflows. Our flexible approach allows us to serve projects of all sizes, from single-site upgrades to large-scale buildouts.
-        </p>
-      </section>
-
-      <section class="home-section">
-        <h2>Our Experience</h2>
-        <p>
-          Our team has extensive experience in telecom construction drawings, zoning exhibits, fiber permitting plans, traffic control plans, and general drafting for utilities and infrastructure. We’ve supported projects in both urban and rural environments, and we understand jurisdictional and technical requirements.
-        </p>
-      </section>
-
-      <section class="home-section">
-        <h2>Our Values</h2>
-        <p>
-          At Telcowise, we value responsiveness, attention to detail, and clear communication. Our clients rely on us for fast turnaround, high-quality deliverables, and seamless collaboration. We treat each client’s goals as our own.
-        </p>
-      </section>
-    </div>
+    <section>
+      <h2>About Telcowise Solutions</h2>
+      <p>
+        Telcowise Solutions is a professional telecom drafting company based in Texas. We deliver construction-ready drawings to support engineering, permitting, and project execution across the telecom industry. Our mission is to provide accurate, timely, and scalable drafting services for growing telecom infrastructure nationwide.
+      </p>
+      <h2>Our Mission</h2>
+      <p>
+        We are committed to helping engineering teams, A&E firms, contractors, and program managers eliminate bottlenecks in documentation workflows. Our flexible approach allows us to serve projects of all sizes, from single-site upgrades to large-scale buildouts.
+      </p>
+      <h2>Our Experience</h2>
+      <p>
+        Our team has extensive experience in telecom construction drawings, zoning exhibits, fiber permitting plans, traffic control plans, and general drafting for utilities and infrastructure. We’ve supported projects in both urban and rural environments, and we understand jurisdictional and technical requirements.
+      </p>
+      <h2>Our Values</h2>
+      <p>
+        At Telcowise, we value responsiveness, attention to detail, and clear communication. Our clients rely on us for fast turnaround, high-quality deliverables, and seamless collaboration. We treat each client’s goals as our own.
+      </p>
+    </section>
   </main>
 </body>
 </html>
+
