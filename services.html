@@ -99,15 +99,19 @@
       height: 100%;
       background-color: rgba(0, 102, 204, 0.9); /* blue background */
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      line-height: 1.4em;
       opacity: 0;
       transition: opacity 0.5s ease;
-      z-index: 1;
+      z-index: 3;
+      overflow-wrap: break-word;
     }
 
     .service-box:hover img {
@@ -116,7 +120,13 @@
 
     .service-box:hover .service-description {
       opacity: 1;
-      z-index: 3;
+    }
+
+    @media (max-width: 600px) {
+      .service-description {
+        font-size: 1em;
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
