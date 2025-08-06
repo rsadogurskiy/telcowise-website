@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home – Telcowise Solutions</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
   <style>
-    .hero {
-      background: url("tower-background.jpg") no-repeat center center;
-      background-size: cover;
-      height: 400px;
+    .banner {
+      background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.6)), url('tower-background.jpg') center/cover no-repeat;
+      padding: 40px 20px;
+      text-align: center;
+      color: #003366;
+    }
+    .banner img {
+      width: 160px;
+      margin: 20px 0;
+    }
+    .banner p {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .section {
+      background-color: rgba(255,255,255,0.95);
+      margin: 30px auto;
+      padding: 30px;
+      max-width: 1000px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .section h2 {
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
+      font-size: 1.4em;
+      color: #222;
     }
-
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+    .section h2::before {
+      content: '📁';
+      margin-right: 10px;
     }
-
-    .hero-text {
-      z-index: 1;
-      font-size: 2em;
-      font-weight: bold;
-      max-width: 80%;
+    .section p {
+      color: #333;
     }
-
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    .home-section h2::before {
-      content: "\1F4C4  ";
+    .highlight {
+      background-color: rgba(255,255,255,0.7);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
     }
   </style>
 </head>
 <body>
   <header>
     <div>
-      <img src="logo.png" alt="Telcowise Logo" style="height: 100px;" />
+      <img src="logo.png" alt="Telcowise Logo" style="height: 100px;">
       <h1>Telcowise Solutions</h1>
     </div>
     <nav>
@@ -66,72 +65,41 @@
     </nav>
   </header>
 
-  <section class="home-section fade-in-section">
-  <h2>What We Do</h2>
-  <p>
-    Our core services include wireless site construction drawings, zoning packages formatted per jurisdiction, permit drawings, traffic control plans (TCP), fiber overlays, and more. We also support general drafting needs for structural, civil, and MEP engineers. Every drawing is created with precision and reviewed for code and compliance accuracy.
-  </p>
-  <div style="margin-top: 20px; text-align: center;">
-    <img src="ATSSA.png" alt="ATSSA Certified" style="max-width: 180px; height: auto; margin-bottom: 10px;">
-    <p style="font-weight: bold; color: #003366;">
-      Certified in Traffic Control Design by ATSSA – American Traffic Safety Services Association
-    </p>
-  </div>
-</section>
-
   <main>
-    <div class="home-container">
-      <section class="home-section fade-in-section">
-        <h2>Welcome to Telcowise Solutions</h2>
-        <p>
-          Telcowise Solutions is a Texas-based telecom drafting firm that supports engineering and construction workflows nationwide. We help streamline projects for A&E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation.
-        </p>
-      </section>
-
-      <section class="home-section fade-in-section">
-        <h2>What We Do</h2>
-        <p>
-          Our core services include wireless site construction drawings, zoning packages formatted per jurisdiction, permit drawings, traffic control plans (TCP), fiber overlays, and more. We also support general drafting needs for structural, civil, and MEP engineers. Every drawing is created with precision and reviewed for code and compliance accuracy.
-        </p>
-      </section>
-
-      <section class="home-section fade-in-section">
-        <h2>Who We Serve</h2>
-        <p>
-          We work with telecom carriers, engineering design firms, permitting coordinators, and general contractors. Whether you’re launching a new build in a dense urban zone or just need quick redlines turned around, we adapt to your workflow and scale as needed.
-        </p>
-      </section>
-
-      <section class="home-section fade-in-section">
-        <h2>How We Work</h2>
-        <p>
-          Our team operates remotely with flexible capacity. You can expect responsive communication, clean file organization, and drawings delivered in your templates or ours. We’re used to tight timelines and high-volume programs—we'll meet your standards and your deadlines.
-        </p>
-      </section>
-
-      <section class="home-section fade-in-section">
-        <h2>Why Telcowise?</h2>
-        <p>
-          Clients trust us because we listen, we communicate clearly, and we deliver. Our experience spans multiple states, agencies, and telecom providers. From California Caltrans TCPs to Midwest zoning drawings—we’ve got you covered.
-        </p>
-      </section>
+    <div class="banner">
+      <h2>What We Do</h2>
+      <p class="highlight">
+        Our core services include wireless site construction drawings, zoning packages formatted per jurisdiction, permit drawings, traffic control plans (TCP), fiber overlays, and more. We also support general drafting needs for structural, civil, and MEP engineers. Every drawing is created with precision and reviewed for code and compliance accuracy.
+      </p>
+      <img src="ATSSA.png" alt="ATSSA Certified">
+      <p>Certified in Traffic Control Design by ATSSA – American Traffic Safety Services Association</p>
     </div>
+
+    <section class="section">
+      <h2>Welcome to Telcowise Solutions</h2>
+      <p>Telcowise Solutions is a Texas-based telecom drafting company that supports engineering and construction workflows nationwide. We help streamline projects for A&E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation.</p>
+    </section>
+
+    <section class="section">
+      <h2>What We Do</h2>
+      <p>Our core services include wireless site construction drawings, zoning packages formatted per jurisdiction, permit drawings, traffic control plans (TCP), fiber overlays, and more. We also support general drafting needs for structural, civil, and MEP engineers. Every drawing is created with precision and reviewed for code and compliance accuracy.</p>
+    </section>
+
+    <section class="section">
+      <h2>Who We Serve</h2>
+      <p>We work with telecom carriers, engineering design firms, permitting coordinators, and general contractors. Whether you’re launching a new build in a dense urban zone or just need quick redlines turned around, we adapt to your workflow and scale as needed.</p>
+    </section>
+
+    <section class="section">
+      <h2>How We Work</h2>
+      <p>Our team operates remotely with flexible capacity. You can expect responsive communication, clean file organization, and drawings delivered in your templates or ours. We’re able to tight timelines and high-volume programs—we'll meet your standards and your deadlines.</p>
+    </section>
+
+    <section class="section">
+      <h2>Why Telcowise?</h2>
+      <p>We care about accuracy, deadlines, and collaboration. Whether we’re producing your zoning package, utility plan, or construction drawing—we always deliver with quality and clarity.</p>
+    </section>
   </main>
-
-  <script>
-    const faders = document.querySelectorAll('.fade-in-section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    faders.forEach(fade => {
-      observer.observe(fade);
-    });
-  </script>
 </body>
 </html>
 
