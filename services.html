@@ -1,154 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services – Telcowise Solutions</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    body { background: url("tower-background.jpg") center/cover no-repeat fixed; margin:0; font-family: Arial, sans-serif; }
+    .page-wrapper { background: rgba(255,255,255,0.85); min-height: 100vh; }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+    header { background:#fff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; border-bottom:1px solid #e5e7eb; }
+    header a.logo-link { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    header img { height:60px; }
+    header h1 { margin:0; font-size:1.5rem; color:#003366; }
+    nav ul { list-style:none; margin:0; padding:0; display:flex; gap:18px; flex-wrap:wrap; }
+    nav a { text-decoration:none; color:#003366; font-weight:bold; }
 
-    header {
-      background-color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #ccc;
-    }
-
-    header img {
-      height: 60px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
-      color: #003366;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #003366;
-      font-weight: bold;
-    }
-
-    main {
-      padding: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 30px 0;
-    }
+    .services-grid { max-width:1100px; margin:30px auto; padding:0 20px;
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; }
 
     .service-box {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      position: relative;
-      height: 300px;
+      position: relative; height: 300px; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); background:#fff;
+    }
+    /* Inner slider: two panes (image/title + description) */
+    .service-box__inner {
+      display: flex; width: 200%; height: 100%; transition: transform .45s ease;
+    }
+    .service-box:hover .service-box__inner,
+    .service-box:focus-within .service-box__inner {
+      transform: translateX(-50%);
     }
 
-    .image-wrapper {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
+    .service-pane { width: 50%; height: 100%; position: relative; }
+    .service-pane--image { background:#000; }
+    .service-pane--image img {
+      width:100%; height:100%; object-fit:cover; display:block;
     }
-
-    .image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      display: block;
-    }
-
-    .service-description {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 102, 204, 0.95);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    .service-box:hover .image-wrapper img {
-      transform: translateX(-100%);
-    }
-
-    .service-box:hover .service-description {
-      opacity: 1;
-    }
-
     .service-title {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      margin: 0;
-      padding: 10px;
-      font-size: 1.1em;
-      text-align: center;
-      z-index: 2;
+      position:absolute; left:0; right:0; bottom:0;
+      margin:0; padding:10px 12px; text-align:center;
+      background: rgba(0,0,0,0.55); color:#fff; font-size:1.1em; font-weight:bold;
     }
 
-    @media (max-width: 600px) {
-      .service-description {
-        font-size: 1em;
-        padding: 15px;
-      }
+    .service-pane--desc {
+      background:#f9f9f9; color:#333; display:flex; align-items:center; justify-content:center; padding:20px; text-align:center;
+    }
+
+    /* Mobile: allow tap to toggle focus state (no hover) */
+    @media (hover:none) and (pointer:coarse) {
+      .service-box { cursor: pointer; }
+    }
+
+    @media (max-width:600px){
+      header { justify-content:center; }
+      nav ul { flex-direction:column; gap:8px; align-items:center; }
+      .services-grid { padding:0 15px; }
     }
   </style>
 </head>
 <body>
+<div class="page-wrapper">
   <header>
-    <div style="display: flex; align-items: center; gap: 15px;">
+    <a href="index.html" class="logo-link" aria-label="Go to Home">
       <img src="logo.png" alt="Telcowise Logo">
       <h1>Telcowise Solutions</h1>
-    </div>
-    <nav>
+    </a>
+    <nav aria-label="Primary">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
         <li><a href="contacts.html">Contact</a></li>
       </ul>
     </nav>
@@ -157,67 +79,80 @@
   <main>
     <div class="services-grid">
 
-      <div class="service-box">
-        <div class="image-wrapper">
-          <img src="Wireless construction.png" alt="Wireless">
-          <div class="service-description">
+      <div class="service-box" tabindex="0">
+        <div class="service-box__inner">
+          <div class="service-pane service-pane--image">
+            <img src="Wireless construction.png" alt="Wireless Construction Drawings">
+            <h3 class="service-title">Wireless Construction Drawings</h3>
+          </div>
+          <div class="service-pane service-pane--desc">
             Full site construction drawings for macro and small cell deployments, including layouts, grounding, power, and antenna config per carrier standards.
           </div>
         </div>
-        <div class="service-title">Wireless Construction Drawings</div>
       </div>
 
-      <div class="service-box">
-        <div class="image-wrapper">
-          <img src="TCP.png" alt="TCP">
-          <div class="service-description">
+      <div class="service-box" tabindex="0">
+        <div class="service-box__inner">
+          <div class="service-pane service-pane--image">
+            <img src="TCP.png" alt="Traffic Control Plans">
+            <h3 class="service-title">Traffic Control Plans (TCP)</h3>
+          </div>
+          <div class="service-pane service-pane--desc">
             MUTCD-compliant TCPs for fiber, telecom, and utility projects, adapted for local agencies and phasing requirements.
           </div>
         </div>
-        <div class="service-title">Traffic Control Plans (TCP)</div>
       </div>
 
-      <div class="service-box">
-        <div class="image-wrapper">
-          <img src="zoning.png" alt="Zoning">
-          <div class="service-description">
+      <div class="service-box" tabindex="0">
+        <div class="service-box__inner">
+          <div class="service-pane service-pane--image">
+            <img src="zoning.png" alt="Zoning & Permit Drawings">
+            <h3 class="service-title">Zoning & Permit Drawings</h3>
+          </div>
+          <div class="service-pane service-pane--desc">
             Zoning drawings with site plans, elevations, and jurisdiction-specific formatting for telecom deployment.
           </div>
         </div>
-        <div class="service-title">Zoning & Permit Drawings</div>
       </div>
 
-      <div class="service-box">
-        <div class="image-wrapper">
-          <img src="Fiber.png" alt="Fiber">
-          <div class="service-description">
+      <div class="service-box" tabindex="0">
+        <div class="service-box__inner">
+          <div class="service-pane service-pane--image">
+            <img src="Fiber.png" alt="Fiber Overlay & Redlines">
+            <h3 class="service-title">Fiber Overlay & Redlines</h3>
+          </div>
+          <div class="service-pane service-pane--desc">
             Drafting support for fiber overlays, redlines, and CAD/GIS conversion based on client markups.
           </div>
         </div>
-        <div class="service-title">Fiber Overlay & Redlines</div>
       </div>
 
-      <div class="service-box">
-        <div class="image-wrapper">
-          <img src="General Drafting.png" alt="General Drafting">
-          <div class="service-description">
+      <div class="service-box" tabindex="0">
+        <div class="service-box__inner">
+          <div class="service-pane service-pane--image">
+            <img src="General Drafting.png" alt="General Drafting">
+            <h3 class="service-title">General Drafting (Structural / Civil / MEP)</h3>
+          </div>
+          <div class="service-pane service-pane--desc">
             Structural framing, foundation plans, mechanical layout diagrams, and general drafting for engineers.
           </div>
         </div>
-        <div class="service-title">General Drafting (Structural / Civil / MEP)</div>
       </div>
 
-      <div class="service-box">
-        <div class="image-wrapper">
-          <img src="Utility projects.png" alt="Utility">
-          <div class="service-description">
+      <div class="service-box" tabindex="0">
+        <div class="service-box__inner">
+          <div class="service-pane service-pane--image">
+            <img src="Utility projects.png" alt="Utility Projects Telecom Scope">
+            <h3 class="service-title">Telecom Scope in Utility Projects</h3>
+          </div>
+          <div class="service-pane service-pane--desc">
             Support for telecom elements in utility projects: oil SCADA, lift stations, water telemetry and more.
           </div>
         </div>
-        <div class="service-title">Telecom Scope in Utility Projects</div>
       </div>
 
     </div>
   </main>
+</div>
 </body>
 </html>
