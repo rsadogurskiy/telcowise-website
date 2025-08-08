@@ -1,120 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home – Telcowise Solutions</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
+    /* ===== Base / layout ===== */
+    * { box-sizing: border-box; }
+    html, body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('tower-background.jpg') center/cover no-repeat fixed;
+      background: url("tower-background.jpg") center/cover no-repeat fixed;
     }
-    .page-wrapper {
-      background-color: rgba(255, 255, 255, 0.85);
-      min-height: 100vh;
-    }
-    header {
-      background-color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #ccc;
-    }
-    header a.logo-link {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-    }
-    header img {
-      height: 60px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
-      color: #003366;
-    }
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #003366;
-      font-weight: bold;
-    }
-    .home-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    .home-section {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-    .home-section:nth-child(1) { animation-delay: 0.2s; }
-    .home-section:nth-child(2) { animation-delay: 0.4s; }
-    .home-section:nth-child(3) { animation-delay: 0.6s; }
-    .home-section:nth-child(4) { animation-delay: 0.8s; }
-    .home-section:nth-child(5) { animation-delay: 1s; }
-    .home-section:nth-child(6) { animation-delay: 1.2s; }
+    .page-wrapper { background: rgba(255,255,255,0.85); min-height: 100vh; }
 
-    h2 {
-      color: #0066cc;
+    /* ===== Header ===== */
+    header {
+      background: #fff; padding: 10px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; border-bottom: 1px solid #e5e7eb;
     }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    header img { height: 60px; }
+    header h1 { margin: 0; font-size: 1.5rem; color: #003366; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: #003366; font-weight: bold; }
+
+    /* ===== Video Hero ===== */
+    .hero-video {
+      position: relative;
+      height: 58vh; min-height: 360px; max-height: 760px;
+      overflow: hidden;
+    }
+    .hero-video__bg {
+      position: absolute; top: 50%; left: 50%;
+      min-width: 100%; min-height: 100%;
+      width: auto; height: auto;
+      object-fit: cover; transform: translate(-50%, -50%);
+      filter: saturate(1.05) contrast(1.03);
+    }
+    .hero-video__overlay {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center,
+                  rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.35) 100%);
+      pointer-events: none;
+    }
+    .hero-video__content {
+      position: relative; z-index: 1; color: #fff; text-align: center;
+      padding: 12vh 20px 6vh;
+    }
+    .hero-video__content h2 {
+      margin: 0 0 8px; font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: .3px;
+    }
+    .hero-video__content p {
+      margin: 0 auto; max-width: 880px;
+      font-size: clamp(16px, 2vw, 20px); line-height: 1.5; opacity: .95;
     }
     @media (max-width: 600px) {
-      header {
-        padding: 10px;
-      }
-      header div {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      header h1 {
-        font-size: 1.2em;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 8px;
-      }
-      .home-container {
-        padding: 20px 15px;
-      }
+      .hero-video { height: 46vh; min-height: 260px; }
+      .hero-video__content { padding: 10vh 16px 5vh; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video__bg { animation: none !important; }
+    }
+
+    /* ===== Home content ===== */
+    .home-container {
+      max-width: 1100px; margin: 0 auto; padding: 40px 20px;
+      display: flex; flex-direction: column; gap: 40px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .home-section { opacity: 0; transform: translateY(20px); animation: fadeInUp .8s ease-out forwards; }
+    .home-section:nth-child(1) { animation-delay: .2s; }
+    .home-section:nth-child(2) { animation-delay: .4s; }
+    .home-section:nth-child(3) { animation-delay: .6s; }
+    .home-section:nth-child(4) { animation-delay: .8s; }
+    .home-section:nth-child(5) { animation-delay: 1s; }
+    .home-section:nth-child(6) { animation-delay: 1.2s; }
+    h2 { color: #0066cc; margin-top: 0; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 600px) {
+      header { padding: 10px; justify-content: center; }
+      header h1 { font-size: 1.2rem; }
+      nav ul { flex-direction: column; gap: 8px; align-items: center; }
+      .home-container { padding: 20px 15px; }
     }
   </style>
 </head>
 <body>
 <div class="page-wrapper">
+  <!-- Header -->
   <header>
-    <a href="index.html" class="logo-link">
-      <img src="logo.png" alt="Telcowise Logo">
+    <a href="index.html" class="logo-link" aria-label="Go to Home">
+      <img src="logo.png" alt="Telcowise Logo" />
       <h1>Telcowise Solutions</h1>
     </a>
-    <nav>
+    <nav aria-label="Primary">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contacts.html">Contact</a></li>
@@ -122,12 +108,33 @@
     </nav>
   </header>
 
+  <!-- Video Hero (drone tower) -->
+  <section class="hero-video" aria-label="Drone flyover of a telecom tower">
+    <video class="hero-video__bg"
+           autoplay
+           muted
+           loop
+           playsinline
+           webkit-playsinline
+           preload="metadata"
+           poster="tower-background.jpg">
+      <source src="Tower%20Video.mp4" type="video/mp4" />
+      Your browser doesn't support HTML5 video.
+    </video>
+    <div class="hero-video__overlay"></div>
+    <div class="hero-video__content">
+      <h2>Telcowise Solutions</h2>
+      <p>Drafting for telecom, utilities &amp; infrastructure — fast, precise, compliant.</p>
+    </div>
+  </section>
+
+  <!-- Main content -->
   <main>
     <div class="home-container">
       <section class="home-section">
         <h2>Welcome to Telcowise Solutions</h2>
         <p>
-          Telcowise Solutions is a Texas-based telecom drafting firm that supports engineering and construction workflows nationwide. We help streamline projects for A&E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation.
+          Telcowise Solutions is a Texas-based telecom drafting firm that supports engineering and construction workflows nationwide. We help streamline projects for A&amp;E firms, contractors, utilities, and municipalities by delivering fast, accurate, and professional construction documentation.
         </p>
       </section>
 
@@ -159,10 +166,11 @@
         </p>
       </section>
 
+      <!-- ATSSA section -->
       <section class="home-section">
-        <h2>Certifications & Memberships</h2>
+        <h2>Certifications &amp; Memberships</h2>
         <div style="text-align: center;">
-          <a href="https://www.atssa.com/" target="_blank">
+          <a href="https://www.atssa.com/" target="_blank" rel="noopener">
             <img src="ATSSA.png" alt="ATSSA Certified" style="max-width: 200px; height: auto;">
           </a>
           <p style="margin-top: 10px;">
